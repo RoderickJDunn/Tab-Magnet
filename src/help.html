@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab Magnet Help</title>
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/scripts/help.js"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+            background: rgb(230, 230, 230);
+            min-width: 400px;
+        }
+
+        .main-area {
+            width: 75%;
+            height: auto;
+            position: absolute;
+            left: 15%;
+        }
+
+        .header {
+            margin-top: 10px;
+        }
+        h2 {
+            font-family: "Verdana";
+            color: rgba(0, 88, 118, 0.99);
+            font-size: 2em;
+            font-weight: 800;
+            padding-top:3px;
+            display: inline-block;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 10px;
+        }
+
+        #ic_logo {
+            width: 35px;
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            padding-top: 18px;
+        }
+
+        .navigation-bar {
+            width: 100%;
+            display: flex;
+            position: relative;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #aeadad;
+        }
+
+        .navigation-btn {
+            flex-grow: 1;
+            width: 33%;
+            text-align: center;
+            color: azure;
+            background: rgba(0, 88, 118, 0.99);
+            border-color: aliceblue;
+            font-size: 1em;
+            cursor: pointer;
+            padding: 13px;
+
+        }
+        .navigation-btn:hover {
+            background: rgba(20, 77, 96, 0.99);
+        }
+
+        .navigation-btn:active {
+            background: rgba(0, 57, 76, 0.99);
+        }
+
+        .selected {
+            display: block;
+        }
+
+        .selected.navigation-btn {
+            border-bottom-style: solid;
+            border-color: #d08636;
+            font-size: 1.05em;
+            padding: 12px;
+        }
+
+        .sub-navbar-wrapper {
+            width: 100%;
+            display: flex;
+            position: relative;
+            text-align: center;
+            padding-top: 10px;
+            min-height: 20px;
+        }
+
+        .sub-nav-bar {
+            flex-grow: 1;
+            position: relative;
+            display: block;
+            flex-basis: 33.3333%;
+        }
+
+        .sub-nav-bar * {
+            flex-grow: 1;
+            color: #679bc8;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: none;
+        }
+
+        .sub-nav-bar.selected * {
+            display: inline-block;
+        }
+
+        .sub-nav-bar > span {
+            margin: 0 5px;
+        }
+
+        .sub-nav-bar > span:active {
+            color: #446683;
+        }
+
+        .sub-nav-bar.selected > span.selected {
+            text-decoration: underline;
+        }
+
+        .pagination {
+            display: block;
+            padding-top: 10px;
+            text-align: right;
+        }
+
+        .pagination a.nav-arw {
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .1s;
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+        }
+
+        .pagination a:active {
+            color: white;
+            background: rgba(0, 144, 193, 0.33) !important;
+        }
+
+        .help-section {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+
+        .sub-sec {
+            position: relative;
+        }
+
+        .image-container {
+            text-align: center;
+            padding-bottom: 30px;
+            position: relative;
+        }
+
+        .captions-wrapper {
+            max-width: 800px;
+        }
+
+        .caption {
+            display: inline-block;
+            position: absolute;
+            bottom: 0px;
+        }
+        .caption:first-of-type {
+            left: 15%;
+        }
+
+        .caption:nth-of-type(2) {
+            right:17%;
+        }
+
+        .side-by-side {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-container > img#basicHelpImg {
+            padding-top: 5%;
+            width: 60%;
+            max-width: 800px;
+        }
+
+        .image-container > img#basicResultsImg {
+            width: 70%;
+            max-width: 800px;
+        }
+
+        .image-container > img#selectResultsImg {
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .image-container > img#tab_modes_img {
+            width: 92%;
+            max-width: 900px;
+        }
+
+        .list-container {
+            font-size: 1.1em;
+        }
+
+        .list-container ol {
+            margin-top: 0;
+        }
+
+        .list-container > ol > li {
+            padding-top: 18px;
+        }
+
+        .list-container > ul > li {
+            margin-bottom: 40px;
+        }
+
+        .list-container > ul > li > ul > li {
+            margin: 15px 0;
+        }
+
+        .flex-table {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            position: relative;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin: 0 0 3em 0;
+            padding: 0;
+        }
+
+        .flex-table div:nth-child(even) {
+            background-color: #e2e2e2;
+        }
+
+        .title {
+            text-align: center;
+            background-color: rgba(3, 90, 120, 0.28) !important;
+            border-bottom: 2px solid #8d8d8d !important;
+        }
+        .flex-table [class*="flex-cell"] {
+            font-family: "Helvetica";
+            box-sizing: border-box;
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            width: 30%;
+            padding: 0.8em 1.2em;
+            overflow: hidden;
+            list-style: none;
+            border-bottom: solid 1px #bebebe;
+            background: rgba(112, 128, 144, 0.2);
+        }
+
+        .flex-cell-1 {
+            order:1;
+        }
+
+        .flex-cell-2 {
+            order: 2;
+        }
+
+        .flex-cell-3 {
+            order: 3;
+        }
+
+        .flex-cell-4 {
+            order: 4;
+        }
+
+        .flex-cell-5 {
+            order: 5;
+        }
+
+        .flex-cell-6 {
+            order: 6;
+        }
+
+        a {
+            color: #679bc8;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        a:active {
+            color: #446683;
+        }
+        
+        svg {
+            float: left;
+        }
+
+        a.nav-arw:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        a.nav-arw.previous {
+            margin-right: -4px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="main-area">
+    <div class="header">
+        <img id="ic_logo" src="../icons/icon_16.png"/>
+        <h2>Tab Magnet Help</h2>
+    </div>
+    <div class="navigation-bar">
+        <div class="navigation-btn selected">BASICS</div>
+        <div class="navigation-btn">DETAILS</div>
+        <div class="navigation-btn">SHORTCUT KEYS</div>
+    </div>
+
+    <div class="content"><div class="sub-navbar-wrapper">
+        <div class="sub-nav-bar sub-nav-selected">
+            <span>1</span>
+            <span>2</span>
+        </div>
+        <div class="sub-nav-bar">
+            <span>1</span>
+            <span>2</span>
+        </div>
+        <div class="sub-nav-bar"></div>
+    </div>
+
+    <div class="pagination">
+
+        <a class='nav-arw previous' href="#" title="Previous Page (← Arrow Key)">❮</a>
+        <a class='nav-arw next' href="#" title="Previous Page (→ Arrow Key)">❯</a>
+    </div>
+
+    <div id="helpSec0" class="help-section">
+        <div class="sub-sec">
+            <h3>Search Overview</h3>
+            <div class="image-container">
+                <img id="basicHelpImg" src="../images/help_basics.png"/>
+            </div>
+        </div>
+
+        <div class="sub-sec">
+            <h3>Results Overview</h3>
+            <div class="image-container">
+                <img id="basicResultsImg" src="../images/basic_results_img.png"/>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="helpSec1" class="help-section" style="display: none">
+        <div class="sub-sec">
+            <h3>Selecting Results</h3>
+            <div class="side-by-side">
+                <div class="image-container">
+                    <img id="selectResultsImg" src="../images/selecting_results_img.PNG"/>
+                </div>
+                <div class="list-container">
+                    <ul>
+                        <li>Use your mouse or ↑↓ arrow keys to select results</li>
+                        <li>Tab Results
+                            <ul>
+                                <li>Click or press ENTER to jump to selected tab</li>
+                                <li>Click the 'X' on a tab result to close that tab</li>
+                            </ul>
+                        </li>
+                        <li>History Results
+                            <ul>
+                                <li>Click or press ENTER to open the selected history item in a new tab</li>
+                                <li>See <a class="link">Shortcut Keys</a> for other ways to open history results</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sub-sec">
+            <h3>Tab-List Modes</h3>
+            <div class="image-container">
+                <img id="tab_modes_img" src="../images/tab_list_modes_img.PNG"/>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="helpSec2" class="help-section" style="display: none">
+        <div>
+            <h3>Keyboard Shortcuts</h3>
+            <div class="flex-table">
+                <div class="flex-cell-1 title"></div>
+                <div class="flex-cell-2" style="order:2">Open Tab Magnet (*defaults)</div>
+                <div class="flex-cell-3" style="order:3">Search Google</div>
+                <div class="flex-cell-4" style="order:4">Open history result in a background tab</div>
+                <div class="flex-cell-5" style="order:5">Open history result in a new window</div>
+                <div class="flex-cell-6" style="order:6">Toggle between List-Tab modes</div>
+
+                <div class="flex-cell-1 title" style="order:1"><h4>Mac</h4></div>
+                <div class="flex-cell-2" style="order:2">Option + F</div>
+                <div class="flex-cell-3" style="order:3">Option + ENTER</div>
+                <div class="flex-cell-4" style="order:4">Cmd + ENTER</div>
+                <div class="flex-cell-5" style="order:5">Shift + ENTER</div>
+                <div class="flex-cell-6" style="order:6">Ctrl+L</div>
+
+
+                <div class="flex-cell-1 title" style="order:1"><h4>Windows</h4></div>
+                <div class="flex-cell-2" style="order:2">Alt + F</div>
+                <div class="flex-cell-3" style="order:3">Alt + ENTER</div>
+                <div class="flex-cell-4" style="order:4">Ctrl + ENTER</div>
+                <div class="flex-cell-5" style="order:5">Shift + ENTER</div>
+                <div class="flex-cell-6" style="order:6">Windows + L</div>
+            </div>
+        </div>
+    </div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+body.findTheTab {
+	padding: 0;
+	margin: 0;
+	background: #efefef
+}
+
+#popupContent {
+	width: 450px;
+	font-family: 'Josefin Sans', Arial, sans-serif;
+	margin: 3px;
+	border: 3px ridge #e8e8e8;
+	border-radius: 4px;
+}
+
+#popupContent .search-field {
+	display: block;
+	width: 100%;
+	height: 35px;
+	padding: 10px 10px 8px 10px;
+	font-size: 18px;
+	line-height: 1.5;
+	color: #555;
+	/*background-color: #ececec;;*/
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	font-family: 'Josefin Sans', Arial, sans-serif;
+}
+
+#popupContent .search-field:focus {
+	outline: 0;
+}
+
+#inputBtnsWrapper {
+	position: absolute;
+	right: 8px;
+	top: 6px;
+	width: 75px;
+	height: 35px;
+	font-size: 0;
+}
+
+.input-button {
+	display: inline-block;
+	background: none;
+	cursor: pointer;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+}
+
+.input-button:hover {
+	background: #d7d7d7;
+}
+
+.input-button:active {
+	background: #aaaaaa;
+}
+
+.input-button.selected {
+	background: #d7d7d7;
+}
+
+#listTabsBtn path{
+	fill: #777777
+}
+
+.input-button svg {
+	/*width: inherit;*/
+	/*height: inherit;*/
+}
+
+.input-button object {
+	width:100%;
+	height: 100%;
+}
+
+.input-button:hover svg {
+	filter: brightness(80%);
+}
+
+.input-button:active svg {
+	filter: brightness(50%);
+}
+
+#popupContent .list-group-item:first-child {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+#popupContent .list-group-item:last-child {
+	margin-bottom: 0;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+#popupContent .list-group {
+	margin-bottom: 0;
+	font-size: 15px;
+}
+
+.list-group > div {
+	padding: 10px;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: relative;
+	display: block;
+	margin-bottom: -1px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	color: #555;
+	text-decoration: none;
+	line-height: 18px;
+    box-sizing: border-box;
+}
+/* TODO: There are a jumble of ways that results 'highlighted' when focused. ie) jquery,css ... focus, selected, hover */
+
+#popupContent .list-group > div.selected {
+	color: #555;
+	text-decoration: none;
+	background-color: #7dbcf2;
+	cursor: pointer;
+}
+
+.result-content {
+	display: flex;
+}
+
+.result-text-content {
+	padding-left: 3px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#popupContent .list-group > div img.page-icon {
+	float: left;
+	display: block;
+	height: 18px;
+	margin-right: 5px;
+	align-self: center;
+	text-align: center;
+	min-width: 18px;
+}
+
+.tab-close-btn {
+    align-self: center;
+    margin-left: auto;
+    border-radius: 50%;
+	margin-right: 6px;
+}
+
+.tab-close-btn img {
+	width: 12px;
+	vertical-align: middle;
+	border-radius: 50%;
+}
+
+.tab-close-btn img:hover {
+	background: lightgray;
+}
+
+#historyResultsTitle {
+	justify-content: center;
+	display: flex;
+	font-size: 17px;
+	padding-bottom: 5px;
+	padding-top: 15px;
+	color: #483D8B;
+	font-variant: small-caps;
+	font-weight: 700;
+}
+
+div.results {
+	overflow-y: auto;
+	max-height: 425px;
+	position:relative;  /* TODO: This may be problematic. Revise if layout issues surface */
+}
+
+.url-text {
+}
+
+.matched-text {
+	color: red;
+}
+
+#sectionSeparator {
+	height: 3px;
+	background: #fff8dc;
+	margin-left: 1px;
+}
+
+#noResultsBlock {
+    padding: 10px;
+	line-height: 18px;
+	text-align: center;
+}
+
+.history-result-text {
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+}
+
+#historyResultsFooter {
+	text-align: center;
+	padding: 10px;
+}
+
+#historyResultsFooter a span {
+	font-size: small;
+}
+
+#historyResultsFooter a {
+	cursor: pointer;
+	color: rgba(88, 88, 88, 0.98);
+	padding: 7px;
+}
+
+#historyResultsFooter a:hover {
+	color: rgba(0, 0, 0, 0.98);
+	text-decoration: underline;
+}
+
+#historyResultsFooter a:active {
+	color: rgba(2, 11, 235, 0.97);
+	text-decoration: underline;
+}
+
+#testWidth {
+	position: absolute;
+	visibility: hidden;
+	height: auto;
+	width: auto;
+	white-space: nowrap; /* Thanks to Herb Caudill comment */
+}
+
+.flex-ellipses-wrapper {
+	width: 100%;
+	display: inline-flex;
+	flex-wrap: nowrap;
+}
+
+.flex-prematch {
+	flex: 1 0 48.5%;
+	/*text-overflow: ellipsis;*/
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.flex-ellipses {
+	flex: 1 0 3%;
+	/*padding-left: 2px;*/
+	/*padding-right: 1px;*/
+	text-align: center;
+}
+
+.flex-postmatch {
+	flex: 1 0 48.5%;
+	white-space: nowrap;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+}
+
+#statusWrapper {
+	text-align: center;
+	width:100%;
+}
+
+#historyStatus {
+	height: 20px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	overflow-x: hidden;
+	white-space: nowrap;
+
+	/*animation-name: increase-width;*/
+	/*animation-duration: 4s;*/
+	/*animation-iteration-count: infinite;*/
+}
+
+@keyframes increase-width {
+	from {
+		width: 10%;
+	}
+	to {
+		width: 15%;
+	}
+}
+
+.hidden {
+	display: none !important;
+}

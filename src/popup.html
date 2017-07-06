@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/style_popup.css">
+
+	<script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/scripts/tabMagnet.js"></script>
+</head>
+<body class="findTheTab"> <!--style="height: 200px;"-->
+	<div id="popupContent">
+		<div id="inputBtnsWrapper">
+			<div id="googleSearchBtn" class="input-button" title="Search google in a new tab (ALT+ENTER)">
+				<svg version="1.1" x="0px" y="0px" width="25" height="35" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+					<path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12&#10;&#9;c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24&#10;&#9;c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+					<path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657&#10;&#9;C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+					<path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36&#10;&#9;c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+					<path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571&#10;&#9;c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+				</svg>
+			</div>
+			<div id="listTabsBtn" class="input-button" title="List tabs in this window">
+				<svg id="ic_listCurrentTabs" height="100%" viewBox="0 0 500 500" width="100%" version="1.1">
+					<g id="g4379" transform="translate(20 20)">
+						<g id="g3351" fill="#666" transform="matrix(1.0004 0 0 .81696 -.085436 -12.627)" stroke="#666">
+							<g id="g3353" fill-rule="evenodd" stroke-width="21.227">
+								<path id="path3358" d="m187.31 339.63h139.29"/>
+								<path id="path4778" d="m187.31 259.68h139.29"/>
+								<path id="path4784" d="m187.31 419.71h139.29"/>
+							</g>
+							<g id="g3358">
+								<rect id="rect4435" ry="0" height="20" width="20" y="249.68" x="126.99"/>
+								<rect id="rect4437" ry="0" height="20" width="20" y="329.63" x="126.99"/>
+								<rect id="rect4439" ry="0" height="20" width="20" y="409.71" x="126.99"/>
+							</g>
+						</g>
+						<rect id="rect3526" height="63.46" width="288.33" y="88.292" x="84.153" fill="#666"/>
+					</g>
+				</svg>
+				<svg id="ic_listAllTabs" height="100%" viewBox="0 0 500 500" width="100%" version="1.1" style="display:none">
+					<g id="g4379" transform="translate(0 40)">
+						<rect id="rect4866" transform="scale(1,-1)" ry="0" height="295.77" width="295.22" stroke="#666"
+							  y="-339.54" x="130.9" stroke-width="13.5" fill="#fff"/>
+						<rect id="rect4328" height="60.158" width="288.33" y="46.905" x="132.44" fill="#666"/>
+						<rect id="rect4241" transform="scale(1,-1)" ry="0" height="333.8" width="333.17" y="-399.3"
+							  x="62.816" fill="#fff"/>
+						<rect id="rect3336" ry="0" transform="scale(1,-1)" height="295.77" width="295.22" stroke="#666"
+							  y="-380.29" x="81.791" stroke-width="13.5" fill="#f2f2f2"/>
+						<g id="g3351" fill="#666" transform="matrix(1.0004 0 0 .81696 -.085436 -12.627)" stroke="#666">
+							<g id="g3353" fill-rule="evenodd" stroke-width="21.227">
+								<path id="path3358" d="m187.31 339.63h139.29"/>
+								<path id="path4778" d="m187.31 259.68h139.29"/>
+								<path id="path4784" d="m187.31 419.71h139.29"/>
+							</g>
+							<g id="g3358">
+								<rect id="rect4435" ry="0" height="20" width="20" y="249.68" x="126.99"/>
+								<rect id="rect4437" ry="0" height="20" width="20" y="329.63" x="126.99"/>
+								<rect id="rect4439" ry="0" height="20" width="20" y="409.71" x="126.99"/>
+							</g>
+						</g>
+						<rect id="rect3526" height="63.46" width="288.33" y="88.292" x="84.153" fill="#666"/>
+					</g>
+				</svg>
+			</div>
+		</div>
+		<input type="text" class="search-field" placeholder="Search for open tabs and more" name="search">
+		<div class="list-group results tabs" style="display: none">
+
+		</div>
+		<div id="noResultsBlock" style="display: none">No open tabs found</div>
+		<div id="extraResultsWrapper" style="display: none">
+			<div id="historyResultsTitle">
+				<span>History Results</span>
+			</div>
+			<div id="extraResults" class="list-group results history">
+				<div id="statusWrapper"><div id="historyStatus">
+					<span>Loading . . .</span>
+				</div></div>
+			</div>
+		</div>
+	</div>
+	<div id="tabListItemTemplate" href="#" class="list-group-item"
+	   data-windowid="" data-indexid="" style="display: none">
+		<div class="result-content">
+			<img class="page-icon" src="">
+			<div class="result-text-content">
+				<span class="title-text"></span>
+				<br class="separator" style="display: none">
+				<span class="url-text" style="display: none"></span>
+			</div>
+            <div class="tab-close-btn" title="Close tab">
+                <img src="/icons/ic_close_black_24dp_1x.png">
+            </div>
+		</div>
+	</div>
+	<div id="histListItemTemplate" class="history-result list-group-item hidden">
+		<div class='single-line result-text-content'>
+
+		</div>
+	</div>
+	<div style="display: none">
+		<a href="https://icons8.com/web-app/17949/Google">Google icon credits</a>
+	</div>
+</body>
+</html>
