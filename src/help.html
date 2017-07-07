@@ -167,19 +167,6 @@
             position: relative;
         }
 
-        .captions-wrapper {
-            max-width: 800px;
-        }
-
-        .caption {
-            display: inline-block;
-            position: absolute;
-            bottom: 0px;
-        }
-        .caption:first-of-type {
-            left: 15%;
-        }
-
         .caption:nth-of-type(2) {
             right:17%;
         }
@@ -316,7 +303,7 @@
 <body>
 <div class="main-area">
     <div class="header">
-        <img id="ic_logo" src="../icons/icon_16.png"/>
+        <img id="ic_logo" src="../icons/icon_128.PNG"/>
         <h2>Tab Magnet Help</h2>
     </div>
     <div class="navigation-bar">
@@ -325,106 +312,108 @@
         <div class="navigation-btn">SHORTCUT KEYS</div>
     </div>
 
-    <div class="content"><div class="sub-navbar-wrapper">
-        <div class="sub-nav-bar sub-nav-selected">
-            <span>1</span>
-            <span>2</span>
-        </div>
-        <div class="sub-nav-bar">
-            <span>1</span>
-            <span>2</span>
-        </div>
-        <div class="sub-nav-bar"></div>
-    </div>
-
-    <div class="pagination">
-
-        <a class='nav-arw previous' href="#" title="Previous Page (← Arrow Key)">❮</a>
-        <a class='nav-arw next' href="#" title="Previous Page (→ Arrow Key)">❯</a>
-    </div>
-
-    <div id="helpSec0" class="help-section">
-        <div class="sub-sec">
-            <h3>Search Overview</h3>
-            <div class="image-container">
-                <img id="basicHelpImg" src="../images/help_basics.png"/>
+    <div class="content">
+        <div class="sub-navbar-wrapper">
+            <div class="sub-nav-bar sub-nav-selected">
+                <span>1</span>
+                <span>2</span>
             </div>
-        </div>
-
-        <div class="sub-sec">
-            <h3>Results Overview</h3>
-            <div class="image-container">
-                <img id="basicResultsImg" src="../images/basic_results_img.png"/>
+            <div class="sub-nav-bar">
+                <span>1</span>
+                <span>2</span>
             </div>
+            <div class="sub-nav-bar"></div>
         </div>
 
-    </div>
+        <div class="pagination">
 
-    <div id="helpSec1" class="help-section" style="display: none">
-        <div class="sub-sec">
-            <h3>Selecting Results</h3>
-            <div class="side-by-side">
+            <a class='nav-arw previous' href="#" title="Previous Page (← Arrow Key)">❮</a>
+            <a class='nav-arw next' href="#" title="Previous Page (→ Arrow Key)">❯</a>
+        </div>
+
+        <div id="helpSec0" class="help-section">
+            <div class="sub-sec">
+                <h3>Search Overview</h3>
                 <div class="image-container">
-                    <img id="selectResultsImg" src="../images/selecting_results_img.PNG"/>
+                    <img id="basicHelpImg" src="../images/help_basics.png"/>
                 </div>
-                <div class="list-container">
-                    <ul>
-                        <li>Use your mouse or ↑↓ arrow keys to select results</li>
-                        <li>Tab Results
-                            <ul>
-                                <li>Click or press ENTER to jump to selected tab</li>
-                                <li>Click the 'X' on a tab result to close that tab</li>
-                            </ul>
-                        </li>
-                        <li>History Results
-                            <ul>
-                                <li>Click or press ENTER to open the selected history item in a new tab</li>
-                                <li>See <a class="link">Shortcut Keys</a> for other ways to open history results</li>
-                            </ul>
-                        </li>
-                    </ul>
+            </div>
+
+            <div class="sub-sec">
+                <h3>Results Overview</h3>
+                <div class="image-container">
+                    <img id="basicResultsImg" src="../images/basic_results_img.png"/>
                 </div>
             </div>
 
         </div>
 
-        <div class="sub-sec">
-            <h3>Tab-List Modes</h3>
-            <div class="image-container">
-                <img id="tab_modes_img" src="../images/tab_list_modes_img.PNG"/>
+        <div id="helpSec1" class="help-section" style="display: none">
+            <div class="sub-sec">
+                <h3>Selecting Results</h3>
+                <div class="side-by-side">
+                    <div class="image-container">
+                        <img id="selectResultsImg" src="../images/selecting_results_img.PNG"/>
+                    </div>
+                    <div class="list-container">
+                        <ul>
+                            <li>Use your mouse or ↑↓ arrow keys to select results</li>
+                            <li>Tab Results
+                                <ul>
+                                    <li>Click or press ENTER to jump to selected tab</li>
+                                    <li>Click the 'X' on a tab result to close that tab</li>
+                                </ul>
+                            </li>
+                            <li>History Results
+                                <ul>
+                                    <li>Click or press ENTER to open the selected history item in a new tab</li>
+                                    <li>See <a class="link">Shortcut Keys</a> for other ways to open history results</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
 
+            <div class="sub-sec">
+                <h3>Tab-List Modes</h3>
+                <div class="image-container">
+                    <img id="tab_modes_img" src="../images/tab_list_modes_img.PNG"/>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="helpSec2" class="help-section" style="display: none">
+            <div>
+                <h3>Keyboard Shortcuts</h3>
+                <div class="flex-table">
+                    <div class="flex-cell-1 title"></div>
+                    <div class="flex-cell-2" style="order:2">Open Tab Magnet (*defaults)</div>
+                    <div class="flex-cell-3" style="order:3">Search Google</div>
+                    <div class="flex-cell-4" style="order:4">Open history result in a background tab</div>
+                    <div class="flex-cell-5" style="order:5">Open history result in a new window</div>
+                    <div class="flex-cell-6" style="order:6">Toggle between List-Tab modes</div>
+
+                    <div class="flex-cell-1 title" style="order:1"><h4>Mac</h4></div>
+                    <div class="flex-cell-2" style="order:2">Option + F</div>
+                    <div class="flex-cell-3" style="order:3">Option + ENTER</div>
+                    <div class="flex-cell-4" style="order:4">Cmd + ENTER or Click</div>
+                    <div class="flex-cell-5" style="order:5">Shift + ENTER or Click</div>
+                    <div class="flex-cell-6" style="order:6">Ctrl+L</div>
+
+
+                    <div class="flex-cell-1 title" style="order:1"><h4>Windows</h4></div>
+                    <div class="flex-cell-2" style="order:2">Alt + F</div>
+                    <div class="flex-cell-3" style="order:3">Alt + ENTER</div>
+                    <div class="flex-cell-4" style="order:4">Ctrl + ENTER or Click</div>
+                    <div class="flex-cell-5" style="order:5">Shift + ENTER or Click</div>
+                    <div class="flex-cell-6" style="order:6">Windows + L</div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div id="helpSec2" class="help-section" style="display: none">
-        <div>
-            <h3>Keyboard Shortcuts</h3>
-            <div class="flex-table">
-                <div class="flex-cell-1 title"></div>
-                <div class="flex-cell-2" style="order:2">Open Tab Magnet (*defaults)</div>
-                <div class="flex-cell-3" style="order:3">Search Google</div>
-                <div class="flex-cell-4" style="order:4">Open history result in a background tab</div>
-                <div class="flex-cell-5" style="order:5">Open history result in a new window</div>
-                <div class="flex-cell-6" style="order:6">Toggle between List-Tab modes</div>
-
-                <div class="flex-cell-1 title" style="order:1"><h4>Mac</h4></div>
-                <div class="flex-cell-2" style="order:2">Option + F</div>
-                <div class="flex-cell-3" style="order:3">Option + ENTER</div>
-                <div class="flex-cell-4" style="order:4">Cmd + ENTER</div>
-                <div class="flex-cell-5" style="order:5">Shift + ENTER</div>
-                <div class="flex-cell-6" style="order:6">Ctrl+L</div>
-
-
-                <div class="flex-cell-1 title" style="order:1"><h4>Windows</h4></div>
-                <div class="flex-cell-2" style="order:2">Alt + F</div>
-                <div class="flex-cell-3" style="order:3">Alt + ENTER</div>
-                <div class="flex-cell-4" style="order:4">Ctrl + ENTER</div>
-                <div class="flex-cell-5" style="order:5">Shift + ENTER</div>
-                <div class="flex-cell-6" style="order:6">Windows + L</div>
-            </div>
-        </div>
-    </div></div>
 </div>
 </body>
 </html>

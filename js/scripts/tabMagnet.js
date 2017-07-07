@@ -1,8 +1,10 @@
 /**
  * Created by rdunn on 2017-02-21.
  */
+// TODO: (BUG): There were ~80 tabs open altogether. ~25 in current window. The Popup did not open properly in this case.
+            //  This was consistent.. I tried it 10 times, and it never opened correctly, until I closed some tabs in that window.
 // TODO (Usability): Help page! Options page?
-    // TODO: Check keycodes for modifier keys on Windows. (Test extension on windows)
+    // TODO: Check keycodes for modifier keys on Windows. (Test extension on windows) g
 
 // TODO (FIX): Matches not shown for tab results if the match is located too far along the string
 // TODO (FEATURE): I feel like history results should always show title (unless blank), even if the match is within the URL.
@@ -56,7 +58,7 @@
     - Cmd+ENTER/CLICK          --> Open selected result in new tab, but keep focus on Popup        (matches Chrome omnibar)
     - Shift+ENTER/CLICK        --> Open selected result in new window, and switch to it            (matches Chrome omnibar)
     - Opt+ENTER                --> Open new tab with Google search for the term, switch to it. Ignores whatever element is Selected.
-    - Ctrl+L                   --> Cycle through List-Tabs modes
+    - Ctrl+L  (mac)            --> Cycle through List-Tabs modes
  */
 $(document).ready(function () {
     let startTabMagnet = function (tabs) {
@@ -131,7 +133,7 @@ $(document).ready(function () {
                 extraResultsElm.hide();
                 $(this).find("#ic_listCurrentTabs").hide();
                 $(this).find("#ic_listAllTabs").show();
-                $('#listTabsBtn').attr('title', "List tabs from this window (Ctrl+L)");
+                $('#listTabsBtn').attr('title', "List tabs from this window (Mac: Cmd+L - PC: Ctrl+L)");
                 chrome.tabs.query({}, function (tabs) {
                     console.debug("Getting all tabs");
                     console.debug(tabs);
@@ -149,11 +151,11 @@ $(document).ready(function () {
 
                 });
             }
-            else if (searchContext.tabListMode === 1) {
+            else if (searchContext.tabListMode !== 0) {
                 searchContext.tabListMode = 0;
                 $(this).find("#ic_listAllTabs").hide();
                 $(this).find("#ic_listCurrentTabs").show();
-                $('#listTabsBtn').attr('title', "List tabs from every window (Ctrl+L)");
+                $('#listTabsBtn').attr('title', "List tabs from every window (Mac: Cmd+L - PC: Ctrl+L)");
                 extraResultsElm.hide();
                 chrome.tabs.query({currentWindow: true}, function (tabs) {
                     console.debug("Getting tabs in current window");
@@ -347,7 +349,7 @@ $(document).ready(function () {
                     searchContext = newContext(); // Allow fall-through, since we want to search with what's left in the input after deleting the character(s)
                 case (76): // 'L' key was pressed
                     // check if 'Ctrl' key modifier is being pressed
-                    if (e.ctrlKey) {
+                    if (e.metaKey) {
                         $('#listTabsBtn').click();
                         break;
                     }

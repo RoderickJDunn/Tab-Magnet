@@ -3,7 +3,6 @@
  */
 
 $(document).ready(function () {
-
     let siteMap = [2, 2, 1]; // number of subsections for each section
 
     let currentPage = [0, 0];  // current section, subsection

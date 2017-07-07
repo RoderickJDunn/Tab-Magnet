@@ -22,7 +22,6 @@ body.findTheTab {
 	font-size: 18px;
 	line-height: 1.5;
 	color: #555;
-	/*background-color: #ececec;;*/
 	background-image: none;
 	border: 1px solid #ccc;
 	border-radius: 2px;
@@ -74,11 +73,6 @@ body.findTheTab {
 	fill: #777777
 }
 
-.input-button svg {
-	/*width: inherit;*/
-	/*height: inherit;*/
-}
-
 .input-button object {
 	width:100%;
 	height: 100%;
@@ -124,7 +118,6 @@ body.findTheTab {
 	line-height: 18px;
     box-sizing: border-box;
 }
-/* TODO: There are a jumble of ways that results 'highlighted' when focused. ie) jquery,css ... focus, selected, hover */
 
 #popupContent .list-group > div.selected {
 	color: #555;
@@ -185,10 +178,7 @@ body.findTheTab {
 div.results {
 	overflow-y: auto;
 	max-height: 425px;
-	position:relative;  /* TODO: This may be problematic. Revise if layout issues surface */
-}
-
-.url-text {
+	position:relative;
 }
 
 .matched-text {
@@ -253,15 +243,12 @@ div.results {
 
 .flex-prematch {
 	flex: 1 0 48.5%;
-	/*text-overflow: ellipsis;*/
 	overflow: hidden;
 	white-space: nowrap;
 }
 
 .flex-ellipses {
 	flex: 1 0 3%;
-	/*padding-left: 2px;*/
-	/*padding-right: 1px;*/
 	text-align: center;
 }
 
@@ -284,10 +271,6 @@ div.results {
 	text-align: center;
 	overflow-x: hidden;
 	white-space: nowrap;
-
-	/*animation-name: increase-width;*/
-	/*animation-duration: 4s;*/
-	/*animation-iteration-count: infinite;*/
 }
 
 @keyframes increase-width {

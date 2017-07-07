@@ -1,9 +1,9 @@
 {
-   "manifest_version": 3,
+   "manifest_version": 2,
    "name": "Tab Magnet",
-   "version": "1.0",
+   "version": "0.55",
 
-   "description": "Quickly find open tabs and sites from your history, and pull them into view!!",
+   "description": "Quickly find open tabs and sites from your history, and pull them into view!",
    "icons": {
       "128": "icons/icon_128.png",
       "16": "icons/icon_16.png",
