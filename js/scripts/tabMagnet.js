@@ -1,10 +1,16 @@
 /**
  * Created by rdunn on 2017-02-21.
  */
-// TODO: (BUG): There were ~80 tabs open altogether. ~25 in current window. The Popup did not open properly in this case.
+// TODO: (BUG): There were ~80 tabs open altogether. ~25 in current window. The Popup often doesn't open properly in this case.
             //  This was consistent.. I tried it 10 times, and it never opened correctly, until I closed some tabs in that window.
-// TODO (Usability): Help page! Options page?
-    // TODO: Check keycodes for modifier keys on Windows. (Test extension on windows) g
+// TODO (Usability): Options page
+    // Add option for default Tab List mode
+    // Add link to help page
+// TODO (USABILITY): Find out how to launch help page once app is first installed
+// TODO: Check keycodes for modifier keys on Windows. (Test extension on windows)
+// TODO (BUG): On Windows, when the popup is opened the text field does not automatically have focus
+// TODO (FEATURE): Right click functionality
+// TODO (FEATURE): Sort Tabs by: Date Opened, Date Used, Alphabetically, by Window
 
 // TODO (FIX): Matches not shown for tab results if the match is located too far along the string
 // TODO (FEATURE): I feel like history results should always show title (unless blank), even if the match is within the URL.
